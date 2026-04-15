@@ -1,0 +1,123 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  background: $color-primary;
+  color: rgba(255, 255, 255, 0.85);
+  padding: $space-10 $content-px $space-6;
+  margin-top: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: $space-8;
+  margin-bottom: $space-8;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.logoIcon { font-size: 28px; }
+
+.logoMain {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+  line-height: 1;
+}
+
+.logoSub {
+  font-size: $font-size-lg;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  font-style: italic;
+  line-height: 1;
+}
+
+.tagline {
+  font-size: $font-size-sm;
+  color: rgba(255,255,255,0.65);
+  max-width: 260px;
+  line-height: 1.5;
+}
+
+.colTitle {
+  font-size: $font-size-sm;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: $space-4;
+}
+
+.colLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.colLink {
+  font-size: $font-size-sm;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.15s;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  text-align: left;
+  padding: 0;
+
+  &:hover { color: #fff; text-decoration: none; }
+}
+
+.bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: $space-5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space-3;
+}
+
+.copyright {
+  font-size: $font-size-xs;
+  color: rgba(255,255,255,0.5);
+}
+
+.bottomLinks {
+  display: flex;
+  gap: $space-5;
+}
+
+.bottomLink {
+  font-size: $font-size-xs;
+  color: rgba(255,255,255,0.5);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+
+  &:hover { color: rgba(255,255,255,0.85); }
+}

@@ -1,0 +1,246 @@
+@use '../../styles/variables' as *;
+
+.container { display: flex; flex-direction: column; min-height: 100vh; background: #f5f5f7; }
+
+.main { flex: 1; padding: 40px 10%; box-sizing: border-box; }
+
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.pageTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #004a99;
+    margin: 0;
+}
+
+.filterToggle {
+    padding: 8px 14px;
+    border: 1px solid #004a99;
+    background: #fff;
+    border-radius: 6px;
+    color: #004a99;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.15s;
+    &:hover { background: #f0f8ff; }
+}
+
+.filterCard {
+    background: #f0f8ff;
+    border: 1px solid #b9d5f5;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 74, 153, 0.1);
+    animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+    overflow: hidden;
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+}
+
+.filterCardTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 16px;
+}
+
+.filterRow {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.filterGroup {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filterLabel {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.filterSelect,
+.filterInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b9d5f5;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+    color: #004a99;
+    box-sizing: border-box;
+    outline: none;
+    &:focus { border-color: #004a99; }
+}
+
+.clearBtn {
+    align-self: flex-end;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background: #f5f5f7;
+    color: #333;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    display: block;
+    margin-left: auto;
+    &:hover { background: #e5e5ea; }
+}
+
+.claimsList { display: flex; flex-direction: column; gap: 12px; }
+
+.claimCard {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                transform   0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        transform: translateY(-2px);
+        border-color: #b9d5f5;
+    }
+}
+
+.claimBadge {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.claimId {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 12px;
+}
+
+.claimBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.claimLeft { flex: 1; }
+
+.claimRight { display: flex; flex-direction: column; align-items: flex-end; }
+
+.claimInfoRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.claimInfoLabel {
+    width: 120px;
+    font-size: 14px;
+    color: #555;
+}
+
+.claimInfoValue {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+}
+
+.claimAmountRow {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 6px;
+}
+
+.chevron {
+    font-size: 24px;
+    color: #005bea;
+    font-weight: 700;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 0;
+}
+
+.pageBtn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+    padding: 4px 8px;
+    &:disabled { color: #ccc; cursor: not-allowed; }
+}
+
+.pageInfo {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.emptyState {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    border: 1px solid #e0e0e0;
+}
+
+// ─── Responsive ─────────────────────────────────────────────────────────────
+@media (max-width: $bp-lg) {
+    .main { padding: 32px 4%; }
+    .filterRow { flex-wrap: wrap; }
+    .filterGroup { min-width: 200px; }
+}
+
+@media (max-width: $bp-md) {
+    .main { padding: 24px 16px; }
+    .pageTitle { font-size: 22px; }
+    .filterRow { flex-direction: column; gap: 16px; }
+    .filterGroup { min-width: unset; width: 100%; }
+}
+
+@media (max-width: $bp-sm) {
+    .main { padding: 16px 12px; }
+    .pageHeader { flex-wrap: wrap; gap: 12px; }
+    .pageTitle { font-size: 20px; }
+    .claimBody { flex-direction: column; gap: 12px; }
+    .claimRight { align-items: flex-start; }
+    .claimInfoLabel { width: 100px; }
+    .claimAmountRow { gap: 16px; }
+    .emptyState { padding: 24px 16px; }
+}

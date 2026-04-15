@@ -1,0 +1,4 @@
+{
+  "mfaOptions": ["Message", "Email", "Voice Call", "Google Authenticator", "Okta Verify"],
+  "currentMfa": "Message"
+}

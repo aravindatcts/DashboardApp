@@ -1,0 +1,102 @@
+@use '../../styles/variables' as *;
+
+$shimmer-base: #e5e5ea;
+$shimmer-peak: #f5f5f7;
+
+// ─── Core shimmer block ───────────────────────────────────────────────────────
+
+.bone {
+    display: block;
+    border-radius: 6px;
+    background: linear-gradient(90deg,
+        $shimmer-base  0%,
+        $shimmer-peak 35%,
+        $shimmer-peak 65%,
+        $shimmer-base 100%
+    );
+    background-size: 600px 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    from { background-position: -600px 0; }
+    to   { background-position:  600px 0; }
+}
+
+// ─── Card skeleton ────────────────────────────────────────────────────────────
+
+.card {
+    background: #fff;
+    border: 1px solid $color-border;
+    border-radius: $radius-lg;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+// ─── Claim row skeleton ───────────────────────────────────────────────────────
+
+.claimRow {
+    background: #fff;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+    @for $i from 1 through 6 {
+        &:nth-child(#{$i}) { animation-delay: #{($i - 1) * 60}ms; }
+    }
+}
+
+// ─── Provider card skeleton ───────────────────────────────────────────────────
+
+.providerCard {
+    background: #fff;
+    border: 1px solid $color-border;
+    border-radius: $radius-lg;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    animation: fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+    @for $i from 1 through 6 {
+        &:nth-child(#{$i}) { animation-delay: #{($i - 1) * 70}ms; }
+    }
+}
+
+.providerAvatar {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    @extend .bone;
+}
+
+.providerLines {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 4px;
+}
+
+// ─── Hero skeleton ────────────────────────────────────────────────────────────
+
+.hero {
+    padding: 48px 10%;
+    background: linear-gradient(135deg, #e0ebf7, #ccdcef);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+}

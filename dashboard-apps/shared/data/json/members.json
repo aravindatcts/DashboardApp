@@ -1,0 +1,89 @@
+{
+  "coveredMembers": [
+    { "name": "Sarah Jenkins", "rel": "Subscriber" },
+    { "name": "Mark Jenkins", "rel": "Spouse" },
+    { "name": "Emily Jenkins", "rel": "Child" }
+  ],
+  "memberOptions": [
+    { "label": "Sarah Jenkins (Subscriber)", "value": "Sarah Jenkins" },
+    { "label": "Mark Jenkins (Spouse)", "value": "Mark Jenkins" },
+    { "label": "Emily Jenkins (Child)", "value": "Emily Jenkins" }
+  ],
+  "planInfo": {
+    "plan": "America Health Insurance Choice POS II",
+    "memberId": "W123456789",
+    "groupId": "102938",
+    "effective": "01/01/2023",
+    "status": "Active"
+  },
+  "hraBalance": "$1,200.00",
+  "dashboardTabs": ["Overview", "ID Cards", "Care", "Coverage", "Finances"],
+  "recentClaims": [
+    { "id": "CLM001", "date": "Oct 24, 2023", "provider": "General Hospital", "status": "Processed", "amount": "$120.00", "color": "#34c759" },
+    { "id": "CLM002", "date": "Oct 15, 2023", "provider": "City Radiology", "status": "Pending", "amount": "$450.00", "color": "#ff9500" }
+  ],
+  "pcpData": {
+    "Sarah Jenkins": { "doc": "Dr. Anya Sharma, MD", "spec": "Obstetrics & Gynecology", "phone": "(555) 765-4321", "addr": "456 Women's Health Plaza" },
+    "Mark Jenkins": { "doc": "Dr. Robert Chen, MD", "spec": "Internal Medicine", "phone": "(555) 123-4567", "addr": "789 Medical Center Dr" },
+    "Emily Jenkins": { "doc": "Dr. Emily Foster, MD", "spec": "Pediatrics", "phone": "(555) 987-6543", "addr": "123 Childrens Way" }
+  },
+  "idCardData": {
+    "Sarah Jenkins": "XQHW12345678",
+    "Mark Jenkins": "XQHW12345678-01",
+    "Emily Jenkins": "XQHW12345678-02"
+  },
+  "idCardInfo": {
+    "groupNo": "12345",
+    "rxbin": "001234",
+    "rxpcn": "ABC",
+    "rxgrp": "RX1234",
+    "planCode": "123-456",
+    "medicalClaims": "1-800-555-1234",
+    "pharmacyHelpDesk": "1-800-555-9876",
+    "website": "americahealthinsurance.com"
+  },
+  "accumulatorData": {
+    "Sarah Jenkins": {
+      "inNetwork": [
+        { "label": "Sarah's Deductible", "spent": 1250, "total": 3000, "color": "#0066cc" },
+        { "label": "Family Deductible", "spent": 2100, "total": 6000, "color": "#34c759" },
+        { "label": "Sarah's Out-of-Pocket", "spent": 4500, "total": 8000, "color": "#5e5ce6" },
+        { "label": "Family Out-of-Pocket", "spent": 5200, "total": 16000, "color": "#ff9500" }
+      ],
+      "outNetwork": [
+        { "label": "Sarah's Deductible", "spent": 0, "total": 6000, "color": "#0066cc" },
+        { "label": "Family Deductible", "spent": 0, "total": 12000, "color": "#34c759" },
+        { "label": "Sarah's Out-of-Pocket", "spent": 0, "total": 16000, "color": "#5e5ce6" },
+        { "label": "Family Out-of-Pocket", "spent": 200, "total": 32000, "color": "#ff9500" }
+      ]
+    },
+    "Mark Jenkins": {
+      "inNetwork": [
+        { "label": "Mark's Deductible", "spent": 850, "total": 3000, "color": "#0066cc" },
+        { "label": "Family Deductible", "spent": 2100, "total": 6000, "color": "#34c759" },
+        { "label": "Mark's Out-of-Pocket", "spent": 700, "total": 8000, "color": "#5e5ce6" },
+        { "label": "Family Out-of-Pocket", "spent": 5200, "total": 16000, "color": "#ff9500" }
+      ],
+      "outNetwork": [
+        { "label": "Mark's Deductible", "spent": 0, "total": 6000, "color": "#0066cc" },
+        { "label": "Family Deductible", "spent": 0, "total": 12000, "color": "#34c759" },
+        { "label": "Mark's Out-of-Pocket", "spent": 0, "total": 16000, "color": "#5e5ce6" },
+        { "label": "Family Out-of-Pocket", "spent": 200, "total": 32000, "color": "#ff9500" }
+      ]
+    },
+    "Emily Jenkins": {
+      "inNetwork": [
+        { "label": "Emily's Deductible", "spent": 0, "total": 3000, "color": "#0066cc" },
+        { "label": "Family Deductible", "spent": 2100, "total": 6000, "color": "#34c759" },
+        { "label": "Emily's Out-of-Pocket", "spent": 0, "total": 8000, "color": "#5e5ce6" },
+        { "label": "Family Out-of-Pocket", "spent": 5200, "total": 16000, "color": "#ff9500" }
+      ],
+      "outNetwork": [
+        { "label": "Emily's Deductible", "spent": 0, "total": 6000, "color": "#0066cc" },
+        { "label": "Family Deductible", "spent": 0, "total": 12000, "color": "#34c759" },
+        { "label": "Emily's Out-of-Pocket", "spent": 0, "total": 16000, "color": "#5e5ce6" },
+        { "label": "Family Out-of-Pocket", "spent": 200, "total": 32000, "color": "#ff9500" }
+      ]
+    }
+  }
+}

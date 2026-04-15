@@ -1,0 +1,16 @@
+// Shared MyPlans benefits data
+
+export const BENEFITS_DATA = [
+    { service: 'Virtual Care (Teladoc)', payorPays: 100, youPay: 0, isFixed: true, fixedText: '$0 COPAY' },
+    { service: 'Preventive Care / Wellness Visits', payorPays: 100, youPay: 0, isFixed: true, fixedText: '100% COVERED' },
+    { service: 'Primary Care Visit', payorPays: 0, youPay: 0, isFixed: true, fixedText: '$15 COPAY' },
+    { service: 'Specialist Visit', payorPays: 0, youPay: 0, isFixed: true, fixedText: '$30 COPAY' },
+    { service: 'Mental Health Outpatient', payorPays: 80, youPay: 20, isFixed: false },
+    { service: 'Inpatient Hospital Services', payorPays: 80, youPay: 20, isFixed: false },
+];
+
+export const NETWORK_OPTIONS = [
+    'IN-NETWORK United States',
+    'OUT-OF-NETWORK United States',
+    'INTERNATIONAL Outside the United States',
+];

@@ -1,0 +1,8 @@
+{
+  "notifications": [
+    { "id": 1, "text": "Your claim ID - CLM001 for General Hospital is processed.", "type": "claim", "time": "2h ago", "unread": true },
+    { "id": 2, "text": "Mailed ID card: Your new physical ID card has been shipped.", "type": "card", "time": "1d ago", "unread": true },
+    { "id": 3, "text": "Prior Authorization Approved: Request for Radiology (MRT) has been granted.", "type": "auth", "time": "2d ago", "unread": false },
+    { "id": 4, "text": "Wellness Reminder: It's time for your annual preventive check-up.", "type": "wellness", "time": "3d ago", "unread": false }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "preferences": {
+    "language": "English",
+    "emailPrefs": "Important Updates Only",
+    "deliveryEob": "Online Only",
+    "deliveryTax": "Paper & Online"
+  },
+  "options": {
+    "languages": ["English", "Español", "தமிழ் (Tamil)"],
+    "emailPrefs": ["All Communications", "Important Updates Only", "None"],
+    "delivery": ["Paper & Online", "Online Only"]
+  }
+}

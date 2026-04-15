@@ -1,0 +1,346 @@
+@use '../../../styles/variables' as *;
+
+.container { display: flex; flex-direction: column; min-height: 100vh; background: #f5f5f7; }
+
+.main { flex: 1; padding: 20px 10%; box-sizing: border-box; }
+
+.errorState { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px; gap: 16px; }
+
+.breadcrumb {
+    background: none;
+    border: none;
+    color: #004a99;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 16px;
+    display: block;
+    &:hover { text-decoration: underline; }
+}
+
+.backBtn {
+    background: none;
+    border: none;
+    color: #004a99;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.pageTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #004a99;
+    margin: 0;
+}
+
+.downloadBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #004a99;
+    color: #004a99;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    &:hover { background: #f0f8ff; }
+}
+
+// ─── Detail card ────────────────────────────────────────────────────────────
+.detailCard {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.claimIdTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+}
+
+.amountBlock { text-align: right; }
+
+.amountLabel {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 4px;
+}
+
+.amountValue {
+    font-size: 24px;
+    font-weight: 700;
+    color: #004a99;
+    margin: 0;
+}
+
+.infoGrid {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.infoCol { flex: 1; min-width: 200px; }
+
+.infoGroup { margin-bottom: 16px; }
+
+.infoLabel {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+    margin: 0 0 4px;
+}
+
+.infoValue {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+}
+
+// ─── Breakdown bar ──────────────────────────────────────────────────────────
+.breakdownSection {
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.breakdownTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #444;
+    margin: 0 0 12px;
+}
+
+.stackedBar {
+    display: flex;
+    height: 32px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.payorBar  { background: #004a99; }
+.patientBar { background: #00c3a5; }
+
+.barMarker {
+    position: absolute;
+    left: 80%;
+    top: -24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    margin-left: -50px;
+    z-index: 10;
+}
+
+.barMarkerLabel {
+    font-size: 11px;
+    font-weight: 700;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-bottom: 2px;
+    color: #222;
+}
+
+.barMarkerLine {
+    width: 2px;
+    height: 52px;
+    background: #888;
+}
+
+.legend {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legendDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legendText {
+    font-size: 13px;
+    color: #666;
+}
+
+.legendValue {
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+}
+
+// ─── Timeline card ──────────────────────────────────────────────────────────
+.timelineCard {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.timelineTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 24px;
+}
+
+.timeline {
+    display: flex;
+    padding: 80px 0;
+    position: relative;
+}
+
+.arrowStep {
+    display: flex;
+    flex: 1;
+    position: relative;
+}
+
+.arrowBody {
+    flex: 1;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.arrowStatus {
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    padding: 0 4px;
+}
+
+.nodeTop {
+    position: absolute;
+    bottom: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+}
+
+.nodeBottom {
+    position: absolute;
+    top: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+}
+
+.nodeDate {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+
+.nodeDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.nodeLine {
+    width: 1px;
+    height: 20px;
+}
+
+.arrowHead {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-left-width: 15px;
+    border-right-width: 0;
+    border-bottom-width: 22px;
+    border-top-width: 22px;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    background: transparent;
+}
+
+// ─── Responsive ─────────────────────────────────────────────────────────────
+@media (max-width: $bp-lg) {
+    .main { padding: 20px 5%; }
+}
+
+@media (max-width: $bp-md) {
+    .main { padding: 20px 16px; }
+    .pageTitle { font-size: 22px; }
+    .cardHeader { flex-direction: column; gap: 12px; align-items: flex-start; }
+    .amountBlock { text-align: left; }
+    .infoCol { min-width: unset; width: 100%; }
+    .infoGrid { gap: 16px; }
+
+    // Timeline: scale down on tablet
+    .timeline { padding: 60px 0; }
+    .nodeTop, .nodeBottom { width: 100px; }
+    .arrowStatus { font-size: 10px; }
+    .nodeDate { font-size: 10px; }
+}
+
+@media (max-width: $bp-sm) {
+    .main { padding: 12px; }
+    .pageHeader { flex-wrap: wrap; gap: 12px; }
+    .pageTitle { font-size: 18px; }
+    .downloadBtn { padding: 6px 12px; font-size: 13px; }
+    .claimIdTitle { font-size: 18px; }
+    .amountValue { font-size: 20px; }
+
+    // Timeline becomes very cramped on mobile — hide decorative nodes, just show steps
+    .timeline { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .nodeTop, .nodeBottom { width: 80px; }
+    .arrowBody { height: 36px; }
+
+    .legend { gap: 16px; }
+    .detailCard, .timelineCard { padding: 16px; }
+}

@@ -1,0 +1,553 @@
+@use '../../styles/variables' as *;
+
+.container { display: flex; flex-direction: column; min-height: 100vh; background: #f5f5f7; }
+
+.hero {
+    background: linear-gradient(135deg, #004a99, #0066cc);
+    padding: 48px 10%;
+    text-align: center;
+    animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+}
+
+.heroTitle {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.main { flex: 1; padding: 32px 10%; box-sizing: border-box; }
+
+// ─── Search Card ────────────────────────────────────────────────────────────
+.searchCard {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 24px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.1s;
+
+    @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.98) translateY(10px); }
+        to   { opacity: 1; transform: scale(1)    translateY(0); }
+    }
+}
+
+.tabRow {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.tabBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #d2d2d7;
+    background: #f5f5f7;
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.15s;
+
+    &:hover {
+        border-color: #004a99;
+        color: #004a99;
+    }
+}
+
+.tabBtnActive {
+    background: #004a99;
+    color: #fff !important;
+    border-color: #004a99;
+}
+
+.tabIcon { font-size: 16px; }
+.tabLabel { font-weight: 500; }
+
+// Agent
+.agentBox { margin-bottom: 16px; }
+
+.agentPrompt {
+    font-size: 13px;
+    color: #666;
+    background: #f0f8ff;
+    border: 1px solid #b3d4f5;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.agentInputRow {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.agentInput {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+    &:focus { border-color: #004a99; }
+}
+
+// Name autocomplete
+.autocompleteWrap { position: relative; margin-bottom: 16px; }
+
+.mainInput {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #1d1d1f;
+    box-sizing: border-box;
+    outline: none;
+    &:focus { border-color: #004a99; }
+}
+
+.suggestions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 50;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestionItem {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover { background: #f5f5f7; }
+}
+
+// Chip grid
+.chipGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.chip {
+    padding: 6px 14px;
+    border: 1px solid #d2d2d7;
+    border-radius: 16px;
+    background: #f5f5f7;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+    &:hover { border-color: #004a99; color: #004a99; }
+}
+
+.chipActive {
+    background: #004a99;
+    color: #fff;
+    border-color: #004a99;
+}
+
+.searchBtnRow { margin-bottom: 20px; }
+
+// Location
+.locationRow {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.locationField, .radiusField { flex: 1; min-width: 200px; }
+
+.fieldLabel {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.locationInputWrap {
+    position: relative;
+}
+
+.locationInput {
+    width: 100%;
+    padding: 10px 36px 10px 12px;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    &:focus { border-color: #004a99; }
+}
+
+.gpsIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #004a99;
+}
+
+.radiusRow { display: flex; align-items: center; gap: 12px; }
+
+.rangeInput { flex: 1; accent-color: #004a99; }
+
+.radiusBadge {
+    background: #e3f2fd;
+    color: #004a99;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+// Advanced filters
+.advHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.advLabel { font-size: 14px; font-weight: 600; color: #444; }
+
+.advToggle {
+    background: none;
+    border: 1px solid #d2d2d7;
+    border-radius: 4px;
+    padding: 2px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #666;
+    &:hover { color: #004a99; }
+}
+
+.advPanel {
+    margin-top: 12px;
+    padding: 12px;
+    background: #f5f5f7;
+    border-radius: 8px;
+}
+
+.primaryBtn {
+    padding: 10px 24px;
+    background: #004a99;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover { background: #003977; }
+}
+
+// ─── Results ────────────────────────────────────────────────────────────────
+.resultsSection {}
+
+.resultsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.resultsCount { font-size: 14px; color: #666; margin: 0; }
+
+.mapToggle {
+    padding: 6px 14px;
+    border: 1px solid #004a99;
+    border-radius: 6px;
+    background: none;
+    color: #004a99;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    &:hover { background: #f0f8ff; }
+}
+
+// Map
+.mapContainer {
+    height: 260px;
+    background: linear-gradient(135deg, #e8f0fe, #dce6f8);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+    border: 1px solid #ccd5e0;
+}
+
+.mapMarker {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.markerDot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.markerLabel {
+    background: rgba(255,255,255,0.9);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mapOverlay {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(255,255,255,0.9);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.mapOverlayTitle { font-size: 14px; font-weight: 600; color: #004a99; margin: 0; }
+.mapOverlaySub { font-size: 12px; color: #666; margin: 4px 0 0; }
+
+// Provider grid
+.providerGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.providerCard {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 16px;
+    transition: box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                transform   0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+        transform: translateY(-3px);
+        border-color: #b9d5f5;
+    }
+}
+
+.providerCardInner {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.providerLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.providerPhoto {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+}
+
+.ratingRow { display: flex; align-items: center; gap: 4px; }
+.star { color: #ffc107; font-size: 14px; }
+.rating { font-size: 13px; font-weight: 700; color: #222; }
+
+.providerRight { flex: 1; }
+
+.providerName { font-size: 16px; font-weight: 700; color: #004a99; margin: 0 0 4px; }
+.providerSpec { font-size: 14px; color: #666; margin: 0 0 8px; }
+
+.providerInfoRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 6px;
+    font-size: 12px;
+}
+
+.providerInfoText { color: #444; }
+
+.providerActions {
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 12px;
+    flex-wrap: wrap;
+}
+
+.viewProfileBtn {
+    padding: 8px 16px;
+    border: 1px solid #004a99;
+    border-radius: 6px;
+    background: none;
+    color: #004a99;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover { background: #f0f8ff; }
+}
+
+.scheduleBtn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #004a99;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover { background: #003977; }
+}
+
+// Pagination
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 0;
+    flex-wrap: wrap;
+}
+
+.pageCtrl {
+    padding: 8px 16px;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #004a99;
+    transition: all 0.15s;
+    &:disabled { color: #aaa; border-color: #e0e0e0; cursor: not-allowed; }
+    &:hover:not(:disabled) { background: #f0f8ff; }
+}
+
+.pageNumbers { display: flex; gap: 4px; }
+
+.pageNum {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    color: #333;
+    &:hover { border-color: #004a99; color: #004a99; }
+}
+
+.pageNumActive {
+    background: #004a99;
+    color: #fff !important;
+    border-color: #004a99;
+}
+
+// ─── Responsive ─────────────────────────────────────────────────────────────
+@media (max-width: $bp-lg) {
+    .hero { padding: 36px 5%; }
+    .main { padding: 24px 5%; }
+
+    // Horizontal scroll on search category tabs
+    .tabRow {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
+        scrollbar-width: thin;
+        scrollbar-color: #c7c7cc transparent;
+        &::-webkit-scrollbar { height: 4px; }
+        &::-webkit-scrollbar-track { background: transparent; }
+        &::-webkit-scrollbar-thumb { background: #c7c7cc; border-radius: 2px; }
+    }
+    .tabBtn { flex-shrink: 0; }
+}
+
+@media (max-width: $bp-md) {
+    .hero { padding: 28px 16px; }
+    .heroTitle { font-size: 26px; }
+    .main { padding: 20px 16px; }
+
+    .tabRow { gap: 6px; }
+    .tabBtn { padding: 6px 10px; font-size: 12px; }
+
+    .locationRow { flex-direction: column; gap: 16px; }
+    .locationField, .radiusField { min-width: unset; width: 100%; flex: unset; }
+
+    .agentInputRow { flex-direction: column; }
+    .agentInput { width: 100%; }
+    .primaryBtn { width: 100%; }
+
+    .searchBtnRow .primaryBtn { width: auto; }
+
+    .resultsHeader { flex-wrap: wrap; gap: 8px; }
+
+    .providerCardInner { flex-wrap: wrap; }
+    .providerLeft { flex-direction: row; align-items: center; gap: 12px; }
+
+    .pageNumbers { flex-wrap: wrap; justify-content: center; }
+}
+
+@media (max-width: $bp-sm) {
+    .hero { padding: 20px 12px; }
+    .heroTitle { font-size: 20px; }
+    .main { padding: 16px 12px; }
+
+    .searchCard { padding: 16px; }
+
+    .tabRow { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+    .tabBtn { flex-shrink: 0; }
+
+    .providerActions { flex-direction: column; gap: 8px; }
+    .viewProfileBtn, .scheduleBtn { width: 100%; text-align: center; }
+
+    .pageCtrl { padding: 6px 12px; font-size: 12px; }
+    .pageNum { width: 32px; height: 32px; font-size: 12px; }
+
+    .mapContainer { height: 200px; }
+}

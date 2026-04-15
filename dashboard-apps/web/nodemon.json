@@ -1,0 +1,15 @@
+{
+  "watch": [
+    "next.config.*",
+    ".env*",
+    "tsconfig.json"
+  ],
+  "ext": "js,ts,json,mjs,cjs",
+  "exec": "next dev",
+  "ignore": [
+    ".next/**",
+    "node_modules/**",
+    "public/**"
+  ],
+  "delay": 500
+}
