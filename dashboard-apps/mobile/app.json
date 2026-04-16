@@ -3,6 +3,7 @@
     "name": "MemberPortal",
     "slug": "mobile",
     "version": "1.0.0",
+    "scheme": "memberportal",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -24,6 +25,10 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-web-browser",
+      "expo-secure-store"
+    ]
   }
 }
